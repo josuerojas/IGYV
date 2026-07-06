@@ -14,7 +14,15 @@
 <header>
   <div class="nav">
     <a class="brand" href="index.html">
-      <img src="logo.png" alt="Iglesia Gracia y Verdad" class="brand-logo">
+      <img src="logo.png" alt="Iglesia Gracia y Verdad" class="brand-logo" onerror="this.style.display='none';document.getElementById('brand-fallback').style.display='flex';">
+      <span class="brand-fallback" id="brand-fallback">
+        <span class="mark">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3 L12 21 M7 9 L17 9" stroke="#0a0a0a" stroke-width="2"/>
+          </svg>
+        </span>
+        <span class="brand-name">Gracia y Verdad</span>
+      </span>
     </a>
     <div class="nav-group">
       <nav class="links">
