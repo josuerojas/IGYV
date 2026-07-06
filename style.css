@@ -35,7 +35,7 @@ header{
   backdrop-filter: blur(6px);
   border-bottom:1px solid var(--line);
 }
-.nav{display:flex;align-items:center;justify-content:space-between;padding:20px 32px;max-width:1100px;margin:0 auto;}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px 32px;max-width:1100px;margin:0 auto;}
 .brand{display:flex;align-items:center;gap:12px;color:var(--white);}
 .brand .mark{width:34px;height:34px;border-radius:50%;background:var(--white);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .brand .mark svg{width:18px;height:18px;}
