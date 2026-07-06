@@ -1,0 +1,203 @@
+:root{
+  --black:#0a0a0a;
+  --white:#fafafa;
+  --off:#f3f2ef;
+  --line: rgba(255,255,255,0.14);
+  --line-dark: rgba(0,0,0,0.12);
+  --gray: #7a7a7a;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--white);
+  color:var(--black);
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:500;letter-spacing:0.01em;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.container{max-width:1100px;margin:0 auto;padding:0 32px;}
+
+/* i18n */
+[data-i18n]{display:none;}
+html[data-lang="es"] [data-i18n="es"]{display:block;}
+html[data-lang="en"] [data-i18n="en"]{display:block;}
+html[data-lang="es"] [data-i18n="es"].inline{display:inline;}
+html[data-lang="en"] [data-i18n="en"].inline{display:inline;}
+
+/* Header */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(10,10,10,0.92);
+  backdrop-filter: blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:20px 32px;max-width:1100px;margin:0 auto;}
+.brand{display:flex;align-items:center;gap:12px;color:var(--white);}
+.brand .mark{width:34px;height:34px;border-radius:50%;background:var(--white);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.brand .mark svg{width:18px;height:18px;}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:19px;letter-spacing:0.03em;color:var(--white);white-space:nowrap;}
+nav.links{display:flex;gap:28px;}
+nav.links a{color:var(--white);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;opacity:0.75;transition:opacity .2s;white-space:nowrap;}
+nav.links a:hover,nav.links a.active{opacity:1;}
+.nav-right{display:flex;align-items:center;gap:20px;}
+.lang-toggle{display:flex;border:1px solid var(--line);border-radius:20px;overflow:hidden;flex-shrink:0;}
+.lang-toggle button{
+  background:none;border:none;color:var(--white);font-family:'Inter',sans-serif;
+  font-size:12px;letter-spacing:0.08em;padding:6px 14px;cursor:pointer;opacity:0.6;transition:.2s;
+}
+.lang-toggle button.active{opacity:1;background:var(--white);color:var(--black);}
+.menu-btn{display:none;background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;}
+
+@media (max-width:900px){
+  nav.links{
+    position:fixed;top:74px;left:0;right:0;bottom:0;background:var(--black);
+    flex-direction:column;align-items:flex-start;padding:32px;gap:0;
+    transform:translateX(100%);transition:transform .3s ease;overflow-y:auto;
+  }
+  nav.links.open{transform:translateX(0);}
+  nav.links a{font-size:18px;padding:16px 0;width:100%;border-bottom:1px solid var(--line);opacity:0.9;}
+  .menu-btn{display:block;}
+}
+
+/* Page hero (interior pages) */
+.page-hero{
+  background:var(--black);color:var(--white);padding:180px 0 80px;text-align:center;
+}
+.page-hero .label{color:#a5a5a5;}
+.page-hero h1{font-size:clamp(36px,6vw,64px);}
+
+/* Hero (home) */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;background:var(--black);color:var(--white);position:relative;
+  padding:140px 32px 80px;
+}
+.hero .eyebrow{font-size:13px;letter-spacing:0.35em;text-transform:uppercase;color:#b8b8b8;margin-bottom:28px;}
+.hero h1{font-size:clamp(42px,7vw,88px);line-height:1.05;max-width:900px;margin-bottom:28px;}
+.hero p.sub{font-size:18px;color:#c9c9c9;max-width:560px;margin-bottom:48px;font-weight:300;}
+.hero-cta{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;}
+.btn{
+  display:inline-block;padding:15px 34px;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;
+  border:1px solid var(--white);transition:.25s;cursor:pointer;
+}
+.btn.solid{background:var(--white);color:var(--black);}
+.btn.solid:hover{background:transparent;color:var(--white);}
+.btn.outline{color:var(--white);}
+.btn.outline:hover{background:var(--white);color:var(--black);}
+.btn.dark{border-color:#111;color:#111;}
+.btn.dark:hover{background:#111;color:var(--white);}
+.scroll-cue{position:absolute;bottom:36px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#888;}
+
+/* Sections */
+section{padding:110px 0;}
+.label{font-size:12px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gray);margin-bottom:18px;}
+.section-head{max-width:640px;margin-bottom:64px;}
+.section-head h2{font-size:clamp(32px,4vw,48px);}
+.off{background:var(--off);}
+
+/* Info strip */
+.info-strip{background:var(--black);color:var(--white);padding:64px 0;}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;text-align:center;}
+.info-grid .item .num{font-family:'Cormorant Garamond',serif;font-size:34px;margin-bottom:8px;}
+.info-grid .item .cap{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:#a5a5a5;}
+.info-grid .item{border-right:1px solid var(--line);}
+.info-grid .item:last-child{border-right:none;}
+
+/* About / two-col */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.about-grid .visual{aspect-ratio:4/5;background:var(--black);display:flex;align-items:center;justify-content:center;}
+.about-grid .visual svg{width:120px;height:120px;}
+.about-grid p{color:#444;margin-bottom:20px;font-size:16px;}
+
+/* Leader card */
+.leader-card{display:flex;gap:28px;align-items:center;margin-top:40px;}
+.leader-card .photo{width:88px;height:88px;border-radius:50%;background:#111;flex-shrink:0;}
+.leader-card h3{font-size:20px;margin-bottom:4px;}
+.leader-card p{font-size:14px;color:var(--gray);margin:0;}
+
+/* Beliefs */
+.beliefs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-dark);}
+.belief-card{background:var(--off);padding:44px 36px;}
+.belief-card .n{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--gray);margin-bottom:16px;}
+.belief-card h3{font-size:22px;margin-bottom:14px;}
+.belief-card p{color:#555;font-size:15px;}
+
+/* Ministries / community */
+.ministries-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-dark);}
+.ministry-card{background:var(--white);padding:40px;}
+.ministry-card h3{font-size:24px;margin-bottom:12px;}
+.ministry-card p{color:#444;font-size:15px;margin-bottom:14px;}
+.ministry-card ul{list-style:none;font-size:14px;color:#555;}
+.ministry-card ul li{padding:6px 0;border-top:1px solid var(--line-dark);}
+.ministry-card ul li:first-child{border-top:none;}
+.ministry-meta{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gray);margin-bottom:6px;}
+
+/* Sermons */
+.sermons-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;}
+.sermon-main{aspect-ratio:16/9;background:#111;position:relative;overflow:hidden;}
+.sermon-main iframe{width:100%;height:100%;border:none;}
+.sermon-main .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;}
+.sermon-main .play span{width:64px;height:64px;border-radius:50%;border:1px solid rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;color:#fff;}
+.sermon-list{display:flex;flex-direction:column;gap:1px;background:var(--line-dark);}
+.sermon-item{background:#fff;padding:22px 24px;display:flex;justify-content:space-between;align-items:center;}
+.sermon-item .t{font-size:15px;}
+.sermon-item .d{font-size:12px;color:var(--gray);margin-top:4px;}
+.channel-cta{margin-top:48px;text-align:center;}
+
+/* Events */
+.events-list{display:flex;flex-direction:column;}
+.event-row{display:grid;grid-template-columns:110px 1fr auto;gap:32px;align-items:center;padding:28px 0;border-top:1px solid var(--line-dark);}
+.event-row:last-child{border-bottom:1px solid var(--line-dark);}
+.event-row .date{font-family:'Cormorant Garamond',serif;}
+.event-row .date .d{font-size:32px;line-height:1;}
+.event-row .date .m{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray);}
+.event-row h3{font-size:19px;font-weight:500;font-family:'Inter',sans-serif;margin-bottom:4px;}
+.event-row .meta{font-size:13px;color:var(--gray);}
+.event-row .rsvp{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;border-bottom:1px solid #111;}
+
+/* Giving */
+.giving-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-dark);margin-top:20px;}
+.giving-card{background:var(--white);padding:36px;text-align:center;}
+.giving-card h3{font-size:20px;margin-bottom:10px;}
+.giving-card p{font-size:14px;color:#555;}
+.giving-note{max-width:640px;margin:40px auto 0;text-align:center;color:var(--gray);font-size:14px;}
+
+/* Contact / location */
+.contact-band{background:var(--black);color:var(--white);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;}
+.contact-grid h1,.contact-grid h2{color:var(--white);}
+.contact-item{margin-bottom:28px;}
+.contact-item .k{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:#999;margin-bottom:6px;}
+.contact-item .v{font-size:17px;}
+.social-row{display:flex;gap:16px;margin-top:32px;}
+.social-row a{width:42px;height:42px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;}
+.map-block{background:#161616;display:flex;align-items:center;justify-content:center;color:#666;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;min-height:320px;border:1px solid var(--line);overflow:hidden;}
+.map-block iframe{width:100%;height:100%;min-height:320px;border:none;filter:grayscale(1) invert(0.92) contrast(0.9);}
+
+.contact-form{display:flex;flex-direction:column;gap:16px;}
+.contact-form input,.contact-form textarea{
+  background:transparent;border:none;border-bottom:1px solid var(--line);color:var(--white);
+  padding:12px 0;font-family:'Inter',sans-serif;font-size:15px;font-weight:300;
+}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:#888;}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--white);}
+.contact-form textarea{resize:vertical;min-height:100px;}
+
+/* Footer */
+footer{padding:40px 0;border-top:1px solid var(--line-dark);}
+.footer-row{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--gray);letter-spacing:0.05em;flex-wrap:wrap;gap:12px;}
+
+@media (max-width:760px){
+  .about-grid,.contact-grid,.sermons-grid,.ministries-grid,.giving-grid{grid-template-columns:1fr;}
+  .info-grid{grid-template-columns:1fr;gap:28px;}
+  .info-grid .item{border-right:none;border-bottom:1px solid var(--line);padding-bottom:28px;}
+  .info-grid .item:last-child{border-bottom:none;padding-bottom:0;}
+  .event-row{grid-template-columns:70px 1fr;}
+  .event-row .rsvp{grid-column:2/3;}
+  section{padding:70px 0;}
+}
