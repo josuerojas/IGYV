@@ -14,7 +14,7 @@
 <header>
   <div class="nav">
     <a class="brand" href="index.html">
-      <img src="logo.png" alt="Iglesia Gracia y Verdad" class="brand-logo" onerror="this.style.display='none';document.getElementById('brand-fallback').style.display='flex';">
+      <img src="logo3.png" alt="Iglesia Gracia y Verdad" class="brand-logo" onerror="this.style.display='none';document.getElementById('brand-fallback').style.display='flex';">
       <span class="brand-fallback" id="brand-fallback">
         <span class="mark">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,7 +57,7 @@
       <h2><span data-i18n="es">Te queremos recibir bien</span><span data-i18n="en">We want to welcome you well</span></h2>
     </div>
   </div>
-  <div class="beliefs-grid">
+  <div class="expect-grid">
     <div class="belief-card">
       <div class="n">01</div>
       <h3><span data-i18n="es" class="inline">Ven tal como est&aacute;s</span><span data-i18n="en" class="inline">Come as you are</span></h3>
@@ -70,6 +70,11 @@
     </div>
     <div class="belief-card">
       <div class="n">03</div>
+      <h3><span data-i18n="es" class="inline">Traducci&oacute;n al ingl&eacute;s</span><span data-i18n="en" class="inline">English translation</span></h3>
+      <p><span data-i18n="es" class="inline">Ofrecemos traducci&oacute;n simult&aacute;nea al ingl&eacute;s para quienes no hablan espa&ntilde;ol.</span><span data-i18n="en" class="inline">We offer live simultaneous translation into English for those who don't speak Spanish.</span></p>
+    </div>
+    <div class="belief-card">
+      <div class="n">04</div>
       <h3><span data-i18n="es" class="inline">Te esperamos</span><span data-i18n="en" class="inline">We're expecting you</span></h3>
       <p><span data-i18n="es" class="inline">Llega unos minutos antes de las 10:30 AM &mdash; alguien te recibir&aacute; en la entrada.</span><span data-i18n="en" class="inline">Arrive a few minutes before 10:30 AM &mdash; someone will greet you at the door.</span></p>
     </div>
@@ -82,16 +87,16 @@
     <h2 style="text-align:center;margin-bottom:36px;"><span data-i18n="es">Cu&eacute;ntanos que vienes</span><span data-i18n="en">Let us know you're coming</span></h2>
     <form class="contact-form" onsubmit="return false;">
       <div class="form-row">
-        <input type="text" placeholder="Nombre completo / Full name" required>
-        <input type="tel" placeholder="Tel&eacute;fono (opcional) / Phone (optional)">
+        <input type="text" data-ph-es="Nombre completo" data-ph-en="Full name" placeholder="Nombre completo" required>
+        <input type="tel" data-ph-es="Tel&eacute;fono (opcional)" data-ph-en="Phone (optional)" placeholder="Tel&eacute;fono (opcional)">
       </div>
       <input type="email" placeholder="Email" required>
       <label class="checkbox-row">
         <input type="checkbox">
         <span><span data-i18n="es" class="inline">Vengo con ni&ntilde;os</span><span data-i18n="en" class="inline">I'm bringing kids</span></span>
       </label>
-      <input type="text" placeholder="Nombres y edades de los ni&ntilde;os (opcional) / Kids' names &amp; ages (optional)">
-      <textarea placeholder="Mensaje (opcional) / Message (optional)"></textarea>
+      <input type="text" data-ph-es="Nombres y edades de los ni&ntilde;os (opcional)" data-ph-en="Kids' names &amp; ages (optional)" placeholder="Nombres y edades de los ni&ntilde;os (opcional)">
+      <textarea data-ph-es="Mensaje (opcional)" data-ph-en="Message (optional)" placeholder="Mensaje (opcional)"></textarea>
       <button class="btn outline" type="submit" style="align-self:center;">
         <span data-i18n="es" class="inline">Nos vemos el domingo</span>
         <span data-i18n="en" class="inline">See you Sunday</span>
@@ -117,7 +122,7 @@
       </details>
       <details class="faq-item">
         <summary><span data-i18n="es" class="inline">&iquest;El servicio es en espa&ntilde;ol?</span><span data-i18n="en" class="inline">Is the service in Spanish?</span></summary>
-        <p><span data-i18n="es" class="inline">S&iacute;, el servicio se realiza completamente en espa&ntilde;ol.</span><span data-i18n="en" class="inline">Yes, the service is conducted entirely in Spanish.</span></p>
+        <p><span data-i18n="es" class="inline">El servicio se realiza en espa&ntilde;ol, y ofrecemos traducci&oacute;n simult&aacute;nea al ingl&eacute;s para quienes no hablan espa&ntilde;ol.</span><span data-i18n="en" class="inline">The service is conducted in Spanish, and we offer live simultaneous translation into English for those who don't speak Spanish.</span></p>
       </details>
     </div>
   </div>
