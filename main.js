@@ -12,6 +12,8 @@
   document.addEventListener('DOMContentLoaded', function(){
     var current = document.documentElement.getAttribute('data-lang') || 'es';
     applyPlaceholders(current);
+
+    // Language toggle
     var buttons = document.querySelectorAll('[data-set-lang]');
     buttons.forEach(function(btn){
       if(btn.getAttribute('data-set-lang') === current){ btn.classList.add('active'); }
@@ -25,14 +27,29 @@
       });
     });
 
+    // Mobile menu toggle
     var menuBtn = document.querySelector('.menu-btn');
     var navLinks = document.querySelector('nav.links');
+
     if(menuBtn && navLinks){
-      menuBtn.addEventListener('click', function(){
+      // Open menu on hamburger click
+      menuBtn.addEventListener('click', function(e){
+        e.stopPropagation();
         navLinks.classList.toggle('open');
       });
+
+      // Close menu when a link is clicked
       navLinks.querySelectorAll('a').forEach(function(a){
-        a.addEventListener('click', function(){ navLinks.classList.remove('open'); });
+        a.addEventListener('click', function(){
+          navLinks.classList.remove('open');
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function(e){
+        if(!menuBtn.contains(e.target) && !navLinks.contains(e.target)){
+          navLinks.classList.remove('open');
+        }
       });
     }
   });
