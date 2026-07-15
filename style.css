@@ -57,6 +57,7 @@ nav.links a:hover,nav.links a.active{opacity:1;}
 
 @media (max-width:900px){
   .brand-logo{height:76px;}
+  .nav{padding:0 20px;gap:16px;}
   nav.links{
     position:fixed;top:76px;left:0;right:0;bottom:0;background:var(--black);
     flex-direction:column;align-items:flex-start;padding:32px;gap:0;
@@ -65,6 +66,43 @@ nav.links a:hover,nav.links a.active{opacity:1;}
   nav.links.open{transform:translateX(0);}
   nav.links a{font-size:18px;padding:16px 0;width:100%;border-bottom:1px solid var(--line);opacity:0.9;}
   .menu-btn{display:block;}
+}
+
+@media (max-width:640px){
+  .brand-logo{height:56px;}
+  .nav{padding:0 16px;}
+  .lang-toggle{font-size:11px;}
+  .lang-toggle button{padding:5px 10px;}
+  .menu-btn{font-size:20px;}
+
+  /* Hero adjustments */
+  .hero{padding:120px 16px 60px;}
+  .hero h1{font-size:clamp(36px,8vw,72px);margin-bottom:20px;}
+  .hero p.sub{font-size:clamp(16px,2vw,20px);margin-bottom:32px;}
+  .hero-cta{gap:12px;}
+  .btn{padding:12px 24px;font-size:12px;}
+
+  /* Page hero */
+  .page-hero{padding:140px 16px 60px;}
+  .page-hero h1{font-size:clamp(28px,5vw,48px);}
+
+  /* Sections */
+  section{padding:60px 16px;}
+  .section-head{margin-bottom:40px;}
+  .section-head h2{font-size:clamp(24px,3vw,36px);}
+
+  /* Info grid */
+  .info-grid{gap:20px;padding:48px 16px;}
+  .info-grid .item .num{font-size:28px;}
+
+  /* Leader card */
+  .leader-card{gap:16px;margin-top:28px;}
+  .leader-card .photo{width:72px;height:72px;}
+  .leader-card h3{font-size:18px;}
+
+  /* Event row */
+  .event-row{grid-template-columns:60px 1fr;gap:16px;padding:20px 0;}
+  .event-row .date .d{font-size:28px;}
 }
 
 /* Page hero (interior pages) */
