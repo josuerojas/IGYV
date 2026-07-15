@@ -31,11 +31,15 @@
     var menuBtn = document.querySelector('.menu-btn');
     var navLinks = document.querySelector('nav.links');
 
+    console.log('Menu elements found:', {menuBtn: !!menuBtn, navLinks: !!navLinks});
+
     if(menuBtn && navLinks){
       // Open menu on hamburger click
       menuBtn.addEventListener('click', function(e){
+        console.log('Menu button clicked');
         e.stopPropagation();
         navLinks.classList.toggle('open');
+        console.log('Menu open class:', navLinks.classList.contains('open'));
       });
 
       // Close menu when a link is clicked
