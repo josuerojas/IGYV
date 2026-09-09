@@ -31,15 +31,11 @@
     var menuBtn = document.querySelector('.menu-btn');
     var navLinks = document.querySelector('nav.links');
 
-    console.log('Menu elements found:', {menuBtn: !!menuBtn, navLinks: !!navLinks});
-
     if(menuBtn && navLinks){
       // Open menu on hamburger click
       menuBtn.addEventListener('click', function(e){
-        console.log('Menu button clicked');
         e.stopPropagation();
         navLinks.classList.toggle('open');
-        console.log('Menu open class:', navLinks.classList.contains('open'));
       });
 
       // Close menu when a link is clicked
@@ -54,6 +50,19 @@
         if(!menuBtn.contains(e.target) && !navLinks.contains(e.target)){
           navLinks.classList.remove('open');
         }
+      });
+    }
+
+    // Sermon list: click to swap the featured video
+    var player = document.getElementById('sermon-player');
+    if(player){
+      document.querySelectorAll('.sermon-item[data-video]').forEach(function(item){
+        item.style.cursor = 'pointer';
+        item.addEventListener('click', function(){
+          var id = item.getAttribute('data-video');
+          player.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1';
+          player.scrollIntoView({behavior:'smooth', block:'center'});
+        });
       });
     }
   });
