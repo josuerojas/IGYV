@@ -32,8 +32,11 @@ html[data-lang="en"] [data-i18n="en"].inline{display:inline;}
 header{
   position:fixed;top:0;left:0;right:0;z-index:100;
   background:rgba(10,10,10,0.92);
-  backdrop-filter: blur(6px);
   border-bottom:1px solid var(--line);
+}
+header::before{
+  content:'';position:absolute;inset:0;z-index:-1;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
 }
 .nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:0 40px;width:100%;}
 .brand{display:flex;align-items:center;color:var(--white);flex-shrink:0;justify-self:start;}
