@@ -108,9 +108,9 @@ nav.links a:hover,nav.links a.active{opacity:1;}
   .info-grid .item .num{font-size:28px;}
 
   /* Leader card */
-  .leader-card{gap:16px;margin-top:28px;}
-  .leader-card .photo{width:72px;height:72px;}
-  .leader-card h3{font-size:18px;}
+  .leader-card{flex-direction:column;gap:20px;margin-top:32px;}
+  .leader-card .photo{width:100%;height:auto;aspect-ratio:4/5;}
+  .leader-card h3{font-size:22px;}
 
   /* Event row */
   .event-row{grid-template-columns:60px 1fr;gap:16px;padding:20px 0;}
@@ -182,10 +182,13 @@ section{padding:110px 0;}
 .about-grid p{color:#444;margin-bottom:20px;font-size:16px;}
 
 /* Leader card */
-.leader-card{display:flex;gap:28px;align-items:center;margin-top:40px;}
-.leader-card .photo{width:88px;height:88px;border-radius:50%;background:#111;flex-shrink:0;object-fit:cover;}
-.leader-card h3{font-size:20px;margin-bottom:4px;}
-.leader-card p{font-size:14px;color:var(--gray);margin:0;}
+.leader-card{display:flex;gap:36px;align-items:flex-start;margin-top:48px;}
+.leader-card .photo{width:240px;height:290px;border-radius:16px;background:#111;flex-shrink:0;object-fit:cover;}
+.leader-card .info{padding-top:4px;}
+.leader-card h3{font-size:28px;margin-bottom:4px;}
+.leader-card .role{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--gray);margin:0 0 20px;}
+.leader-card .bio p{font-size:15px;color:#444;margin-bottom:14px;max-width:620px;}
+.leader-card .bio a{color:var(--black);border-bottom:1px solid var(--black);}
 
 /* Beliefs */
 .beliefs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-dark);}
