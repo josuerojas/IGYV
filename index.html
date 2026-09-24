@@ -9,8 +9,29 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<!-- WOMEN'S CONFERENCE PROMO (remove this <style> block after Nov 21) -->
+<style>
+.announce-bar{position:fixed;top:0;left:0;right:0;z-index:101;background:rgba(10,10,10,0.94);border-bottom:1px solid var(--line);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);}
+.announce-bar a{display:block;text-align:center;padding:10px 16px;color:var(--white);font-size:12px;line-height:16px;letter-spacing:0.06em;text-transform:uppercase;opacity:0.9;transition:opacity .2s;}
+.announce-bar a:hover{opacity:1;}
+header{top:37px;}
+@media (max-width:900px){
+  nav.links{top:113px;}
+}
+.event-row.featured{background:var(--white);border:1px solid var(--line-dark);padding:24px;margin-bottom:4px;}
+.event-row.featured .tag{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray);margin-bottom:6px;}
+</style>
+<!-- /WOMEN'S CONFERENCE PROMO style -->
 </head>
 <body>
+<!-- WOMEN'S CONFERENCE PROMO (remove this bar after Nov 21) -->
+<div class="announce-bar">
+  <a href="https://pretix.eu/igv/mujeres2026/" target="_blank" rel="noopener">
+    <span data-i18n="es" class="inline">Conferencia de Mujeres &mdash; Cristo es Suficiente &middot; S&aacute;bado 21 de noviembre &middot; Reg&iacute;strate hoy &rarr;</span>
+    <span data-i18n="en" class="inline">Women's Conference &mdash; Christ Is Enough &middot; Saturday, November 21 &middot; Register today &rarr;</span>
+  </a>
+</div>
+<!-- /WOMEN'S CONFERENCE PROMO bar -->
 <header>
   <div class="nav">
     <a class="brand" href="index.html">
@@ -193,11 +214,17 @@
       <h2><span data-i18n="es">Pr&oacute;ximos eventos</span><span data-i18n="en">Upcoming events</span></h2>
     </div>
     <div class="events-list">
-      <div class="event-row">
+      <!-- WOMEN'S CONFERENCE PROMO (remove "featured" class + tag div after Nov 21) -->
+      <div class="event-row featured">
         <div class="date"><div class="d">21</div><div class="m">Nov</div></div>
-        <div><h3><span data-i18n="es" class="inline">Cristo es Suficiente &mdash; Conferencia de Mujeres</span><span data-i18n="en" class="inline">Christ Is Enough &mdash; Women's Conference</span></h3><div class="meta">8:30 AM &middot; <span data-i18n="es" class="inline">International Baptist Church, Escaz&uacute;</span><span data-i18n="en" class="inline">International Baptist Church, Escaz&uacute;</span></div></div>
+        <div>
+          <div class="tag"><span data-i18n="es" class="inline">Evento especial</span><span data-i18n="en" class="inline">Special event</span></div>
+          <h3><span data-i18n="es" class="inline">Cristo es Suficiente &mdash; Conferencia de Mujeres</span><span data-i18n="en" class="inline">Christ Is Enough &mdash; Women's Conference</span></h3>
+          <div class="meta">8:30 AM &middot; <span data-i18n="es" class="inline">International Baptist Church, Escaz&uacute;</span><span data-i18n="en" class="inline">International Baptist Church, Escaz&uacute;</span></div>
+        </div>
         <a class="rsvp" href="events.html">RSVP</a>
       </div>
+      <!-- /WOMEN'S CONFERENCE PROMO -->
       <div class="event-row">
         <div class="date"><div class="d">13</div><div class="m">Sep</div></div>
         <div><h3><span data-i18n="es" class="inline">Almuerzo de Celebraci&oacute;n de Culturas</span><span data-i18n="en" class="inline">Culture Celebration Lunch</span></h3><div class="meta">1:00 PM</div></div>
